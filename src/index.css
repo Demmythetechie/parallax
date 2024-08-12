@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@keyframes scrl1 {
+  from {top: 105vh;}
+  to {top: 0vh;}
+}
+
+.down {
+  animation-name: scrl1;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+
+@keyframes scrl2 {
+  from {top: 0vh;}
+  to {top: 105vh;}
+}
+
+.up {
+  animation-name: scrl2;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+@keyframes scrl3 {
+  from {top: 55vh;}
+  to {top: 30vh;}
+}
+
+.imgdown {
+  animation-name: scrl3;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+@keyframes scrl4 {
+  from {top: 30vh;}
+  to {top: 55vh;}
+}
+
+.imgup {
+  animation-name: scrl4;
+  animation-duration: 1.1s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
