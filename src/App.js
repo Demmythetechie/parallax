@@ -14,28 +14,53 @@ function App() {
   const nxt = () => {
     setscrl1('down');
     setscrl2('imgdown');
+    setscrl3('positiondwn');
   };
 
   const prv = () => {
-    setscrl1('up');
-    setscrl2('imgup');
+    if (scrl1 !== '') {
+      setscrl1('up');
+      setscrl2('imgup');
+      setscrl3('positionup');
+    }
+  };
+
+  const handleWheel = (event) => {
+    if (event.deltaY > 0) {
+      setscrl1('down');
+      setscrl2('imgdown');
+      setscrl3('positiondwn');
+    } else {
+      if (scrl1 !== '') {
+        setscrl1('up');
+        setscrl2('imgup');
+        setscrl3('positionup');
+      }
+    }
   };
 
   return (
-    <div className="relative w-[100%] flex flex-col justify-between">
-      <div className='absolute w-[10%] aspect-[1/5.15] z-20 left-[90%] flex flex-col justify-between items-center py-[5%]'>
-        <div className="w-[40%] aspect-[1/1]" onClick={prv}>
+    <div className="relative w-[100%] h-[100vh] overflow-hidden flex flex-col justify-between" onWheel={handleWheel}>
+      <div className='absolute w-[1.5%] h-[100vh] z-20 left-[98.5%] flex flex-col justify-between items-center'>
+        <div className="w-[100%] aspect-[1/1]" onClick={prv}>
           <svg viewBox="0 0 40 40" className="flex justify-center items-center opacity-70 hover:opacity-100 group">
             <g>
-              <circle className="group-hover:animate-[rnd_1s_ease-in-out_1] group-hover:delay-0 group-hover:fill-mode-forwards" cx="20" cy="20" r="16" stroke="#007BFF" fill="none" strokeWidth="2" strokeDasharray="24 4" strokeDashoffset="0"/>
+              <rect width="40" height="40" stroke="#007BFF" fill="none" strokeWidth="3"/>
               <polyline points="12,22 20,12 28,22" stroke="#007BFF" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="6 4"/>
             </g>
           </svg>
         </div>
-        <div className="w-[40%] aspect-[1/1]" onClick={nxt}>
+        <div className="absolute w-[100%] h-[94.4vh] top-[2.9%]">
+          <div className="relative w-[100%] h-[100%]">
+            <div className={`${scrl3} absolute w-[100%] h-[50%] bg-[#007BFF]`}>
+            
+            </div>
+          </div>
+        </div>
+        <div className="w-[100%] aspect-[1/1]" onClick={nxt}>
           <svg viewBox="0 0 40 40" className="flex justify-center items-center rotate-[180deg] opacity-70 hover:opacity-100 group">
             <g>
-              <circle className="group-hover:animate-[rnd_1s_ease-in-out_1] group-hover:delay-0 group-hover:fill-mode-forwards" cx="20" cy="20" r="16" stroke="#007BFF" fill="none" strokeWidth="2" strokeDasharray="24 4" strokeDashoffset="0"/>
+              <rect width="40" height="40" stroke="#007BFF" fill="none" strokeWidth="3"/>
               <polyline points="12,22 20,12 28,22" stroke="#007BFF" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="6 4"/>
             </g>
           </svg>

@@ -5,6 +5,7 @@ import { useContext } from "react";
 function Home() {
     const {scrl1, scrl2, scrl3} = useContext(scroll);
 
+
     return (
         <section className="relative w-[100%] border border-red-800">
             <section style={{background: `url(${process.env.PUBLIC_URL}/demo.png)`, backgroundSize: 'cover', backgroundPositionY: 'bottom', backgroundRepeat: 'no-repeat'}} className="flex flex-col absolute z-[2] w-[100%] h-[110vh]">

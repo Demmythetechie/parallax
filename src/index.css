@@ -72,3 +72,32 @@ code {
   animation-fill-mode: forwards;
   animation-direction: normal;
 }
+
+@keyframes scrl5 {
+  from {top: 0%;}
+  to {top: 50%;}
+}
+
+.positiondwn {
+  animation-name: scrl5;
+  animation-duration: 0.8s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+
+@keyframes scrl6 {
+  from {top: 50%;}
+  to {top: 0%;}
+}
+
+.positionup {
+  animation-name: scrl6;
+  animation-duration: 0.8s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
